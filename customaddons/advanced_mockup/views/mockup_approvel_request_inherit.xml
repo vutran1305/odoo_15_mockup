@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="approval_form_inherit" model="ir.ui.view">
+            <field name="name">approval.request.form.inherit</field>
+            <field name="model">approval.request</field>
+            <field name="inherit_id" ref="approvals.approval_request_view_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//notebook/page[@name='approvers']" position="after">
+                    <page string="Merchant">
+                        <group>
+                            <field name="full_name" string="Name"/>
+                        <field name="phone_number"/>
+                        <field name="province"/>
+                            <field name="district"/>
+                        <field name="detail_address"/>
+                            <field name="email"/>
+                        <field name="image_1"/>
+                        <field name="image_2"/>
+                        <field name="image_3"/>
+                        </group>
+                        <group>
+                            <field name="approvel_request_line" mode="tree" string="">
+                            <tree string="Timesheet Activities" default_order="date" edit="true">
+                                <field name="warehouse"/>
+                                <field name="phone_number"/>
+                                 <field name="province"/>
+                                <field name="district"/>
+                                <field name="detail_address"/>
+                            </tree>
+                        </field>
+
+                        </group>
+
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
