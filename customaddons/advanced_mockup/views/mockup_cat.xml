@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+         <record id="product_form_inherit" model="ir.ui.view">
+            <field name="name">product.form.inherit</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+
+                 <xpath expr="//page[@name='general_information']" position="after">
+                     <page string="SPEC Information">
+                       <group >
+                           <field name="spec_1"/>
+                             <field name="spec_2"/>
+                             <field name="spec_3"/>
+                            <field name="spec_4"/>
+                             <field name="spec_5"/>
+                             <field name="spec_6"/>
+                             <field name="spec_7"/>
+                             <field name="spec_8"/>
+                       </group>
+                     </page>
+                 </xpath>
+            </field>
+         </record>
+
+
+
+         <record id="cat_tree_view" model="ir.ui.view">
+            <field name="name">cat.tree.view</field>
+            <field name="model">model.cat</field>
+            <field name="arch" type="xml">
+                <tree string="Cat" editable="bottom">
+                    <field name="name"/>
+                    <field name="group_cat_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="cat_action" model="ir.actions.act_window">
+            <field name="name">Cat</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">model.cat</field>
+             <field name="view_mode">tree</field>
+        </record>
+
+
+
+
+        <record id="group_cay_tree_view" model="ir.ui.view">
+            <field name="name">group.cat.tree.view</field>
+            <field name="model">group.cat</field>
+            <field name="arch" type="xml">
+                <tree string="Group cat" editable="bottom">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="gr_cat_action" model="ir.actions.act_window">
+            <field name="name">Group cat</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">group.cat</field>
+             <field name="view_mode">tree</field>
+        </record>
+
+
+          <menuitem id="menu_cat"
+            name="Cat"
+            action="cat_action"
+            sequence="10"
+            groups="base.group_user"/>
+
+        <menuitem id="menu_gr_cat"
+            name="Group cat"
+            action="gr_cat_action"
+            sequence="10"
+            groups="base.group_user"/>
+    </data>
+</odoo>

@@ -7,8 +7,14 @@
             <field name="inherit_id" ref="approvals.approval_request_view_form"/>
             <field name="arch" type="xml">
 
+                <xpath expr="//notebook/page[@name='description']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                </xpath>
+                 <xpath expr="//notebook/page[@name='approvers']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                </xpath>
                 <xpath expr="//notebook/page[@name='approvers']" position="after">
-                    <page string="Merchant">
+                    <page string="Merchant" invisible="1">
                         <group>
                             <field name="full_name" string="Name"/>
                         <field name="phone_number"/>
@@ -21,8 +27,8 @@
                         <field name="image_3"/>
                         </group>
                         <group>
-                            <field name="approvel_request_line" mode="tree" string="">
-                            <tree string="Timesheet Activities" default_order="date" edit="true">
+                            <field name="approvel_request_line" mode="tree" string="Warehouses list">
+                            <tree string="Timesheet Activities" default_order="date" edit="true" >
                                 <field name="warehouse"/>
                                 <field name="phone_number"/>
                                  <field name="province"/>
@@ -34,7 +40,19 @@
                         </group>
 
                     </page>
+                    <page string="Cấu hình thông tin SPEC">
+                        <field name="approvel_request_line" mode="tree" >
+                            <tree default_order="date" editable="bottom">
+                                <field name="warehouse" string="Tên SPEC"/>
+                                <field name="phone_number" string="Thuộc tính tương ứng"/>
+                            </tree>
+                        </field>
+
+                    </page>
+
+
                 </xpath>
+
             </field>
         </record>
     </data>

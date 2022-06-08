@@ -27,6 +27,7 @@
         'security/ir.model.access.csv',
         'views/mockup_account_line.xml',
          'views/mockup_approvel_request_inherit.xml',
+        'views/mockup_cat.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

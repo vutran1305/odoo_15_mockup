@@ -17,7 +17,8 @@ class ApprovalRequest(models.Model):
     image_1 = fields.Binary("Image 1")
     image_2 = fields.Binary("Image 2")
     image_3 = fields.Binary("Image 3")
-    approvel_request_line = fields.One2many('approval.request.line', 'approval_request_id', string='approvel_request_line')
+    approvel_request_line = fields.One2many('approval.request.line', 'approval_request_id', string='Warehouses list')
+
 
 
 

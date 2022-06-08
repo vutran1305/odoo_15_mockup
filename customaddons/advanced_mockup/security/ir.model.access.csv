@@ -1,3 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_approval_request_line,access.access_approval_request_line,model_approval_request_line,,1,1,1,1
-
+access_cat,access.access_cat,model_model_cat,,1,1,1,1
+access_group_cat,access.access_group_cat,model_group_cat,,1,1,1,1
+access_sub_cat_1,access.access_sub_cat_1,model_sub_cat_1,,1,1,1,1
+access_sub_cat_2,access.access_sub_cat_2,model_sub_cat_2,,1,1,1,1
